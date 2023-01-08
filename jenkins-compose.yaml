@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  myjenkins:
+    image: myjenkins:1.0
+    environment:
+      - JENKINS_SLAVE_AGENT_PORT=50001
+    ports:
+      - 9090:8080
+      - 50000:50000
+    volumes:
+      - $jenkins_home_container_path:/var/jenkins_home
